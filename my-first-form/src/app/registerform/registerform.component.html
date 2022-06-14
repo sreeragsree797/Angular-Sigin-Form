@@ -1,0 +1,45 @@
+<div class="container mt-5"> 
+
+
+     <form class="form"  [formGroup]="registerForm" (ngSubmit)="submitData()">
+            <h3 class="text">Login Form</h3>
+    <div class="mt-2 mb-2 col-lg-6 col-6">
+        <input type="text" minlength="3" maxlength="24" formControlName="name" class="form1" placeholder="Enter Your Name">
+    <div *ngIf="name.invalid && (name.touched || name.dirty)">
+        <span class="error" *ngIf="name.errors?.minlength">*Name must be atleast 3 character long</span>
+        <span class="error" *ngIf="name.errors?.maxlength">*Name must be maximum 24 character long</span>
+        <span class="error" *ngIf="name.errors?.required">*Name is Required</span>
+        <span class="error" *ngIf="name.errors?.pattern">*Enter only characters.</span>
+    </div>
+    </div>
+
+    <div class="mt-2 mb-2col-lg-6 col-6">
+        <input  formControlName="age"  class="form1" placeholder="Enter Your Age">
+    <div *ngIf="age.invalid && (age.touched || age.dirty)">
+        <span class="error" *ngIf="age.errors?.required">*Age is Required</span>
+        <span class="error" *ngIf="age.errors?.pattern">*Enter only Numbers</span>
+    </div>     
+    </div>
+
+    <div class="mt-2 mb-2 col-lg-12 col-12">
+        <input type="text" formControlName="email" class="form1" placeholder="Enter Your Email ID">
+    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+        <span class="error" *ngIf="email.errors?.required">*Email Id is Required</span>
+        <span class="error" *ngIf="email.errors?.email">*Enter valid Email Id</span>
+    </div>
+    </div>
+ 
+    <div class="mt-2 mb-2 col-lg-12 col-12">
+        <input type="text" formControlName="contact" class="form1" placeholder="Enter Your Contact No">  
+    <div *ngIf="contact.invalid && (contact.touched || contact.dirty)">
+        <span class="error" *ngIf="contact.errors?.required">*Contact Number is Required</span>
+        <span class="error" *ngIf="contact.errors?.pattern">*Enter only Numbers</span>
+        </div>     
+    </div> 
+
+    <div class="mt-2 mb-2 col-lg-12 col-12">
+        <button class="btn" >Submit</button>       
+    </div> 
+    </form>
+
+</div>

@@ -1,0 +1,16 @@
+.form{
+    max-width: 500px;
+    margin: auto;
+    background-color: rgba(0, 255, 255, 0.767);
+    padding: 2% 2%;
+}
+.btn{
+    background-color: black;
+    color: white;
+}
+button:hover{
+    color: red;
+}
+.error{
+    color: red;
+}
